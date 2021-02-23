@@ -25,5 +25,6 @@ namespace Team2.Models
         public int ID { get; set; }
         public DateTime GCROWVER  { get; set; }
 
+        public ICollection<Trabajadores> Trabajadores { get; set; }
     }
 }
