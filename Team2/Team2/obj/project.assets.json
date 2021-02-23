@@ -8638,11 +8638,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\Crea una carpeta\\Team2\\Team2\\Team2.csproj",
+      "projectUniqueName": "A:\\GIT\\Team2\\Team2\\Team2\\Team2.csproj",
       "projectName": "Team2",
-      "projectPath": "A:\\Crea una carpeta\\Team2\\Team2\\Team2.csproj",
+      "projectPath": "A:\\GIT\\Team2\\Team2\\Team2\\Team2.csproj",
       "packagesPath": "C:\\Users\\mriog\\.nuget\\packages\\",
-      "outputPath": "A:\\Crea una carpeta\\Team2\\Team2\\obj\\",
+      "outputPath": "A:\\GIT\\Team2\\Team2\\Team2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mriog\\AppData\\Roaming\\NuGet\\NuGet.Config",
