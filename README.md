@@ -15,6 +15,14 @@ Mira **Deployment** para conocer como desplegar el proyecto.
 
 * TODO Que cosas necesitas para instalar el software y como instalarlas *
 
+Swashbuckle.AspNetCore.Swagger
+Swashbuckle.AspNetCore.SwaggerGen
+Swashbuckle.AspNetCore.SwaggerUI
+Microsoft.VisualStudio.Web.CodeGeneration.Design - Version 3.1.4
+Microsoft.EntityFrameworkCore.Tools - Version 3.1.8
+Microsoft.EntityFrameworkCore.SqlServer -Version 3.1.8
+System.IdentityModel.Tokens.Jwt -Version 5.6.0
+Microsoft.AspNetCore.Authentication.JwtBearer -Version 3.1.8
 ```
 TODO
 ```
@@ -62,4 +70,3 @@ También puedes mirar la lista de todos los [contribuyentes](https://github.com/
 ## Expresiones de Gratitud 🎁
 
 * Gracias a **Grupo Castilla** y a **Fundación Esplai** por esta oportunidad
-
