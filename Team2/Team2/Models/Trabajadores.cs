@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Team2.Models
 {
-    public class trabajadores
+    public class Trabajadores
     {
         public string APELLIDO1 { get; set; }
         public string APELLIDO2 { get; set; }
