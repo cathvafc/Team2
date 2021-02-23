@@ -59,5 +59,7 @@ namespace Team2.Models
         public Empresa empresa { get; set; }
         public Categorias categorias { get; set; }
         public T_Provincias t_Provincia { get; set; }
+     
+        public Cuerpo Cuerpo { get; set; }
     }
 }
