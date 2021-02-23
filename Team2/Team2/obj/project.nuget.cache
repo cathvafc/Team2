@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pbU9vpgV+LKxSjftmezD0RxJ8ouuFycoaoFcZs1bKg12i12cKrQsfI236lZ/o5PR4C+Ja1ESP6DzBPuhe4EjWQ==",
+  "dgSpecHash": "KDv2b/PWvtX4zyVCYKPLEmrmg/+8sZ8J3utqsJauNDnh/3R+PsE+ftAGD+9O9xX68ne4q9VHmvZsvyZbi/YzsQ==",
   "success": true,
-  "projectFilePath": "A:\\Crea una carpeta\\Team2\\Team2\\Team2.csproj",
+  "projectFilePath": "A:\\GIT\\Team2\\Team2\\Team2\\Team2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mriog\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.8\\microsoft.aspnetcore.authentication.jwtbearer.3.1.8.nupkg.sha512",
     "C:\\Users\\mriog\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
