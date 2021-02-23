@@ -55,5 +55,9 @@ namespace Team2.Models
         public string T_PROVIS { get; set; }
         public string TELEF_EMERG { get; set; }
         public string TELEFONO { get; set; }
+
+        public Empresa empresa { get; set; }
+        public Categorias categorias { get; set; }
+        public T_Provincias t_Provincia { get; set; }
     }
 }
