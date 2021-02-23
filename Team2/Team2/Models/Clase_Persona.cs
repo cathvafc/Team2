@@ -12,5 +12,7 @@ namespace Team2.Models
         public int ID { get; set; }
         public DateTime GCROWVER { get; set; }
         public char ASIMILADO { get; set; }
+
+        public Categorias categorias { get; set; }
     }
 }

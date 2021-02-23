@@ -12,5 +12,8 @@ namespace Team2.Models
         public char ID_CLASE_PER { get; set; }
         public int ID { get; set; }
         public DateTime GCROWVER { get; set; }
+
+        public ICollection<Trabajadores> trabajadores { get; set; }
+
     }
 }
