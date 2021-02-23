@@ -15,6 +15,8 @@ Mira **Deployment** para conocer como desplegar el proyecto.
 
 * TODO Que cosas necesitas para instalar el software y como instalarlas *
 
+
+```
 Swashbuckle.AspNetCore.Swagger 
 
 
@@ -37,8 +39,6 @@ System.IdentityModel.Tokens.Jwt -Version 5.6.0
 
 
 Microsoft.AspNetCore.Authentication.JwtBearer -Version 3.1.8
-```
-TODO
 ```
 
 ### Instalación 🔧
