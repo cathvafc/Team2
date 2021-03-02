@@ -463,7 +463,7 @@ namespace Team2.Models
                         .IsUnicode(false);
             });
 
-            modelBuilder.Entity<User>().HasKey(p => new { p.UserId, p.FirstName, p.LastName, p.UserName, p.Email, p.Password, p.CreatedDate });
+            modelBuilder.Entity<User>().HasKey(p => new { p.UserId, p.UserName});
             modelBuilder.Entity<User>(entity =>
             {
                 entity.Property(p => p.UserId)
@@ -492,7 +492,7 @@ namespace Team2.Models
 
                 entity.Property(p => p.Email)
                       .HasColumnName("Email")
-                      .HasMaxLength(20)
+                      .HasMaxLength(64)
                       .IsUnicode(false);
 
                 entity.Property(p => p.Password)
