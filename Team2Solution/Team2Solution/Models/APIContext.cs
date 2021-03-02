@@ -21,6 +21,7 @@ namespace Team2.Models
         public virtual DbSet<Empresa> UserInfo { get; set; }
         public virtual DbSet<T_Provincias> Piezas { get; set; }
         public virtual DbSet<Trabajadores> Trabajadores { get; set; }
+        public virtual DbSet<User> User { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Categorias>().HasKey(p => p.CATEGORI);
@@ -460,6 +461,50 @@ namespace Team2.Models
                         .HasColumnName("TELEFONO2")
                         .HasMaxLength(15)
                         .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<User>().HasKey(p => new { p.UserId, p.FirstName, p.LastName, p.UserName, p.Email, p.Password, p.CreatedDate });
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.Property(p => p.UserId)
+                      .HasColumnName("UserId")
+                      .IsRequired()
+                      .HasMaxLength(10)
+                      .IsUnicode(false);
+
+                entity.Property(p => p.FirstName)
+                      .HasColumnName("FirstName")
+                      .IsRequired()
+                      .HasMaxLength(20)
+                      .IsUnicode(false);
+
+                entity.Property(p => p.LastName)
+                      .HasColumnName("LastName")
+                      .IsRequired()
+                      .HasMaxLength(20)
+                      .IsUnicode(false);
+
+                entity.Property(p => p.UserName)
+                      .HasColumnName("UserName")
+                      .IsRequired()
+                      .HasMaxLength(20)
+                      .IsUnicode(false);
+
+                entity.Property(p => p.Email)
+                      .HasColumnName("Email")
+                      .HasMaxLength(20)
+                      .IsUnicode(false);
+
+                entity.Property(p => p.Password)
+                      .HasColumnName("Password")
+                      .IsRequired()
+                      .HasMaxLength(20)
+                      .IsUnicode(false);
+
+                entity.Property(p => p.CreatedDate)
+                      .HasColumnName("CreatedDate")
+                      .HasColumnType("datetime")
+                      .IsUnicode(false);
             });
 
         }
