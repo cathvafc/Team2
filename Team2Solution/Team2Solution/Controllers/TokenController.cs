@@ -29,7 +29,7 @@ namespace Team2.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(UserInfo _userData)
+        public async Task<IActionResult> Post(User _userData)
         {
 
             if (_userData != null && _userData.Email != null && _userData.Password != null)
@@ -69,9 +69,9 @@ namespace Team2.Controllers
             }
         }
 
-        private async Task<UserInfo> GetUser(string email, string password)
+        private async Task<User> GetUser(string email, string password)
         {
-            return await _context.UserInfo.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
+            return await _context.User.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
         }
     }
 
