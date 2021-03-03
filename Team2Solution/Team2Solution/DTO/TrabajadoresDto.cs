@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Team2.DTO
 {
-    public class TrabajadoresPorTipoEmpleado
+    public class TrabajadoresDto
     {
         //Clase para calcular de cada tipo de empleado cuantos trabajadores tenemos para después mostrarlo en las tablas del front.
 
