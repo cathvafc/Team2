@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Team2.Models;
 
 namespace Team2.Models
 {
@@ -542,5 +543,7 @@ namespace Team2.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        public DbSet<Team2.Models.NivOrg> NivOrg { get; set; }
     }
 }
