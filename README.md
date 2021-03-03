@@ -1,6 +1,6 @@
-# Team2 [Título del proyecto]
+# Team2 
 
-* TODO Aquí describimos el proyecto *
+* Repositorio del proyecto final para Grupo Castilla del curso de C#.NET de la Fundación Esplai *
 
 ## Comenzando 🚀
 
@@ -13,8 +13,7 @@ Mira **Deployment** para conocer como desplegar el proyecto.
 
 ### Pre-requisitos 📋
 
-* TODO Que cosas necesitas para instalar el software y como instalarlas *
-
+*Librerías y/o dependencias NuGet necesarias para ejecutar el código del Back-End*
 
 ```
 Swashbuckle.AspNetCore.Swagger 
@@ -42,25 +41,15 @@ Microsoft.AspNetCore.Authentication.JwtBearer -Version 3.1.8
 TODO
 ```
 
-## Ejecutar pruebas automatizadas ⚙️
-
-* TODO Cómo ejecutar las pruebas automáticas si hubieran *
-
 ## Deploy 📦
 
 * HOW TO DEPLOY TODO *
 
 ## Build with 🛠️
 
-* TODO Insert Tools *
-
-* [Dropwizard](*Enlace docs .NET*) - *TODO El framework web usado*
-* [Maven](https://maven.apache.org/) - * TODO Manejador de dependencias *
-* [ROME](https://rometools.github.io/rome/) - * TODO Usado para generar RSS * 
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
+* [.NET Core 3.1](https://docs.microsoft.com/es-es/dotnet/core/whats-new/dotnet-core-3-1)
+* [JQuery](https://jquery.com/)
+* [Bootstrap](https://getbootstrap.com/)
 
 ## Autores ✒️
 
