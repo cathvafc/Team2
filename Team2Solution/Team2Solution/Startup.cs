@@ -32,7 +32,7 @@ namespace Team2
         public void ConfigureServices(IServiceCollection services)
         {
             //Configuramos la conexión con la base de datos SQL
-            var connection = Configuration.GetConnectionString("BootCampDB"); //TODO: Check if db name is correct
+            var connection = Configuration.GetConnectionString("BootCampDBNET"); //TODO: Check if db name is correct
             services.AddDbContextPool<APIContext>(options => options.UseSqlServer(connection));
 
             services.AddCors();
