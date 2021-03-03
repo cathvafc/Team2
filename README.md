@@ -13,8 +13,7 @@ Mira **Deployment** para conocer como desplegar el proyecto.
 
 ### Pre-requisitos 📋
 
-* TODO Que cosas necesitas para instalar el software y como instalarlas *
-
+*Librerías y/o dependencias NuGet necesarias para ejecutar el código del Back-End*
 
 ```
 Swashbuckle.AspNetCore.Swagger 
