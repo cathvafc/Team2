@@ -1,9 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+﻿using System;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Team2.Models
@@ -65,9 +61,11 @@ namespace Team2.Models
                         .IsUnicode(false);
                 entity.Property(p => p.F_INI_VIGEN)
                         .HasColumnName("F_INI_VIGEN")
+                        .HasColumnType("datetime")
                         .IsUnicode(false);
                 entity.Property(p => p.F_FIN_VIGEN)
                         .HasColumnName("F_FIN_VIGEN")
+                        .HasColumnType("datetime")
                         .IsUnicode(false);
                 entity.Property(p => p.D_FUNCIONES)
                         .HasColumnName("D_FUNCIONES")
@@ -86,6 +84,22 @@ namespace Team2.Models
                         .HasMaxLength(60)
                         .IsUnicode(false);
 
+                entity.HasOne(d => d.ID_CLASE_PER)
+                  .WithMany(p => p.Categors)
+                  .HasForeignKey(d => d.IdClasePer)
+                  .OnDelete(DeleteBehavior.ClientSetNull)
+                  .HasConstraintName("FK_CATEGORS_CLASE_PER");
+
+                entity.HasOne(d => d.ID_ESCALA)
+                    .WithMany(p => p.Categors)
+                    .HasForeignKey(d => d.IdEscala)
+                    .HasConstraintName("FK_CATEGORS_ESCALA");
+
+                entity.HasOne(d => d.ID_SUBESCALA)
+                    .WithMany(p => p.Categors)
+                    .HasForeignKey(d => d.IdSubescala)
+                    .HasConstraintName("FK_CATEGORS_SUBESCALA");
+
             });
 
             modelBuilder.Entity<Clase_Persona>().HasKey(p => p.ID_CLASE_PER);
@@ -96,7 +110,8 @@ namespace Team2.Models
                         .HasColumnName("ID_CLASE_PER")
                         .IsRequired()
                         .HasMaxLength(1)
-                        .IsUnicode(false);
+                        .IsUnicode(false)
+                        .ValueGeneratedOnAdd(); //TODO: MIQUEL AutoincrementaL? MAGL
                 entity.Property(p => p.D_CLASE_PER)
                         .HasColumnName("D_CLASE_PER")
                         .IsRequired()
@@ -108,6 +123,7 @@ namespace Team2.Models
                         .IsUnicode(false);
                 entity.Property(p => p.GCROWVER)
                         .HasColumnName("GCROWVER")
+                        .HasColumnType("datetime")
                         .IsRequired()
                         .IsUnicode(false);
                 entity.Property(p => p.ASIMILADO)
@@ -137,9 +153,11 @@ namespace Team2.Models
                 entity.Property(p => p.ID)
                         .HasColumnName("ID")
                         .IsRequired()
-                        .IsUnicode(false);
+                        .IsUnicode(false)
+                        .ValueGeneratedOnAdd(); //TODO: MIQUEL AutoincrementaL? MAGL
                 entity.Property(p => p.GCROWVER)
                         .HasColumnName("GCROWVER")
+                        .HasColumnType("datetime")
                         .IsRequired()
                         .IsUnicode(false);
             });
@@ -221,7 +239,10 @@ namespace Team2.Models
                 entity.Property(p => p.GCROWVER)
                         .HasColumnName("GCROWVER")
                         .IsRequired()
-                        .IsUnicode(false);
+                        .IsUnicode(false)
+                        .HasColumnType("datetime");
+
+
             });
 
             modelBuilder.Entity<T_Provincias>().HasKey(p => p.T_PROVIS);
@@ -249,7 +270,8 @@ namespace Team2.Models
                 entity.Property(p => p.GCROWVER)
                         .HasColumnName("GCROWVER")
                         .IsRequired()
-                        .IsUnicode(false);
+                        .IsUnicode(false)
+                        .HasColumnType("datetime");
             });
 
             //multiples Primary Keys([ID_EMPRESA] , [ID_TRABAJADOR], [ID_ORGANIG], [ID_NIVEL]   )
@@ -295,12 +317,15 @@ namespace Team2.Models
                         .IsUnicode(false);
                 entity.Property(p => p.F_ALTA)
                         .HasColumnName("F_ALTA")
+                        .HasColumnType("datetime")
                         .IsUnicode(false);
                 entity.Property(p => p.F_BAJA)
                         .HasColumnName("F_BAJA")
+                        .HasColumnType("datetime")
                         .IsUnicode(false);
                 entity.Property(p => p.F_NAC)
                         .HasColumnName("F_NAC")
+                        .HasColumnType("datetime")
                         .IsUnicode(false);
                 entity.Property(p => p.GCROWVER)
                         .HasColumnName("GCROWVER")
@@ -461,6 +486,39 @@ namespace Team2.Models
                         .HasColumnName("TELEFONO2")
                         .HasMaxLength(15)
                         .IsUnicode(false);
+
+                entity.HasOne(d => d.empresa)
+                        .WithMany(p => p.Trabajadores)
+                        .HasForeignKey(d => d.ID_EMPRESSA)
+                        .OnDelete(DeleteBehavior.ClientSetNull);
+                        //.HasConstraintName("FK_TRABAJADORES_EMPRESA");
+
+                entity.HasOne(d => d.CUERPO)
+                    .WithMany(p => p.Trabajadores)
+                    .HasForeignKey(d => d.Cuerpo)
+                    .HasConstraintName("FK_TRABAJADORES_CUERPOS");
+
+                entity.HasOne(d => d.GRUPO)
+                    .WithMany(p => p.Trabajadores)
+                    .HasForeignKey(d => d.Grupo)
+                    .HasConstraintName("FK_TRABAJADORES_GRUPOS");
+
+                entity.HasOne(d => d.ID_CATEGORIA)
+                    .WithMany(p => p.Trabajadores)
+                    .HasForeignKey(d => d.IdCategoria)
+                    .HasConstraintName("FK_TRABAJADORES_CATEGORS");
+
+                entity.HasOne(d => d.ID_PROVINCIA_NAC)
+                    .WithMany(p => p.Trabajadores)
+                    .HasForeignKey(d => d.IdProvincia)
+                    .HasConstraintName("FK_TRABAJADORES_PROVINCIAS");
+              
+                entity.HasOne(d => d.T_PROVIS)
+                    .WithMany(p => p.Trabajadores)
+                    .HasForeignKey(d => d.TProvis)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_TRABAJADORES_T_PROVIS");
+
             });
 
             modelBuilder.Entity<User>().HasKey(p => new { p.UserId, p.UserName});
