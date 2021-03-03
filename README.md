@@ -1,6 +1,6 @@
-# Team2 [Título del proyecto]
+# Team2 
 
-* TODO Aquí describimos el proyecto *
+* Repositorio del proyecto final para Grupo Castilla del curso de C#.NET de la Fundación Esplai *
 
 ## Comenzando 🚀
 
@@ -42,10 +42,6 @@ Microsoft.AspNetCore.Authentication.JwtBearer -Version 3.1.8
 TODO
 ```
 
-## Ejecutar pruebas automatizadas ⚙️
-
-* TODO Cómo ejecutar las pruebas automáticas si hubieran *
-
 ## Deploy 📦
 
 * HOW TO DEPLOY TODO *
@@ -54,13 +50,7 @@ TODO
 
 * TODO Insert Tools *
 
-* [Dropwizard](*Enlace docs .NET*) - *TODO El framework web usado*
-* [Maven](https://maven.apache.org/) - * TODO Manejador de dependencias *
-* [ROME](https://rometools.github.io/rome/) - * TODO Usado para generar RSS * 
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
+* [.NET Core 3.1](https://docs.microsoft.com/es-es/dotnet/core/whats-new/dotnet-core-3-1) - *El framework web usado*
 
 ## Autores ✒️
 
