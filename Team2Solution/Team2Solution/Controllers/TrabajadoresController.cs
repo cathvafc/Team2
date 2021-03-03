@@ -38,14 +38,6 @@ namespace Team2.Controllers
 
             };
 
-        private static readonly Expression<Func<NivOrg, DepartamentoDto>> AsTablaDepartamentoDto =
-
-            d => new DepartamentoDto
-
-            {          
-                CAMINO = d.Camino,
-                NOMBRE = d.DNivel
-            };
 
         public TrabajadoresController(APIContext context)
         {
@@ -54,98 +46,11 @@ namespace Team2.Controllers
 
         // GET: api/Trabajadores
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Trabajadores>>> GetTrabajadores()
+        public  IQueryable<TrabajadoresDto> GetTablaTrabajadores()
         {
-            return await _context.Trabajadores.ToListAsync();
+            return  _context.Trabajadores.Select(AsTablaTrabajadoresDto);
         }
 
-        // GET: api/Trabajadores/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Trabajadores>> GetTrabajadores(char id)
-        {
-            var trabajadores = await _context.Trabajadores.FindAsync(id);
-
-            if (trabajadores == null)
-            {
-                return NotFound();
-            }
-
-            return trabajadores;
-        }
-
-        // PUT: api/Trabajadores/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutTrabajadores(char id, Trabajadores trabajadores)
-        {
-            if (id != trabajadores.ID_EMPRESSA)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(trabajadores).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TrabajadoresExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Trabajadores
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
-        public async Task<ActionResult<Trabajadores>> PostTrabajadores(Trabajadores trabajadores)
-        {
-            _context.Trabajadores.Add(trabajadores);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (TrabajadoresExists(trabajadores.ID_EMPRESSA))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtAction("GetTrabajadores", new { id = trabajadores.ID_EMPRESSA }, trabajadores);
-        }
-
-        // DELETE: api/Trabajadores/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Trabajadores>> DeleteTrabajadores(char id)
-        {
-            var trabajadores = await _context.Trabajadores.FindAsync(id);
-            if (trabajadores == null)
-            {
-                return NotFound();
-            }
-
-            _context.Trabajadores.Remove(trabajadores);
-            await _context.SaveChangesAsync();
-
-            return trabajadores;
-        }
 
         private bool TrabajadoresExists(char id)
         {
