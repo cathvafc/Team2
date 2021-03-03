@@ -538,6 +538,9 @@ namespace Team2.Models
                       .IsUnicode(false);
             });
 
+            OnModelCreatingPartial(modelBuilder);
         }
+
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

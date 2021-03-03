@@ -7,6 +7,11 @@ namespace Team2.Models
 {
     public class Cuerpo
     {
+        public Cuerpo()
+        {
+            trabajadores = new HashSet<Trabajadores>();
+        }
+
         public char CUERPO { get; set; }
         public string DESCRIP { get; set; }
         public char CATEGOR { get; set; }

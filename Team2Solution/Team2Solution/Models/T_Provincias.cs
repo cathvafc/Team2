@@ -7,6 +7,11 @@ namespace Team2.Models
 {
     public class T_Provincias
     {
+        public T_Provincias()
+        {
+            trabajadores = new HashSet<Trabajadores>();
+        }
+
         public char T_PROVIS { get; set; }
         public string DESCRIP { get; set; }
         public char ID_CLASE_PER { get; set; }

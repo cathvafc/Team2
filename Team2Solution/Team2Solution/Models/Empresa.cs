@@ -7,6 +7,12 @@ namespace Team2.Models
 {
     public class Empresa
     {
+
+        public Empresa()
+        {
+            Trabajadores = new HashSet<Trabajadores>();
+        }
+
         public char ID_EMPRESA { get; set; }
         public string D_EMPRESA  { get; set; }
         public char SIGLAS  { get; set; }
