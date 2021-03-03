@@ -63,6 +63,8 @@ namespace Team2.Models
         public Categorias categorias { get; set; }
         public T_Provincias t_Provincia { get; set; }
 
+        public NivOrg NivelOrganizativo { get; set; }
+
         public Cuerpo Cuerpo { get; set; }
     }
 }

@@ -19,6 +19,8 @@ namespace Team2.Models
         public virtual DbSet<T_Provincias> Piezas { get; set; }
         public virtual DbSet<Trabajadores> Trabajadores { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<NivOrg> NivOrg { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Categorias>().HasKey(p => p.CATEGORI);
@@ -491,7 +493,10 @@ namespace Team2.Models
                 entity.HasOne(d => d.t_Provincia)
                     .WithMany(p => p.trabajadores)
                     .HasForeignKey(d => d.T_PROVIS);
-                   
+
+                entity.HasOne(d => d.NivelOrganizativo)
+                    .WithMany(p => p.trabajadores)
+                    .HasForeignKey(d => d.ID_ORGANIG);
 
             });
 
@@ -539,11 +544,169 @@ namespace Team2.Models
                       .IsUnicode(false);
             });
 
+            modelBuilder.Entity<NivOrg>().HasKey(p => new { p.IdOrganig, p.DNivel });
+            modelBuilder.Entity<NivOrg>(entity =>
+            {
+                entity.Property(p => p.Camino)
+                      .HasColumnName("CAMINO")
+                      .HasMaxLength(240)
+                      .IsUnicode(false);
+
+                entity.Property(p => p.CategNivel)
+                    .HasColumnName("CATEG_NIVEL")
+                    .HasMaxLength(3)
+                    .IsRequired()
+                    .IsUnicode(false);
+
+                entity.Property(p => p.DNivel)
+                    .HasColumnName("D_NIVEL")
+                    .HasMaxLength(120)
+                    .IsUnicode(false);
+
+                entity.Property(p => p.EsPuesto)
+                    .HasColumnName("ES_PUESTO")
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+
+                entity.Property(p => p.FCreacion)
+                    .HasColumnName("F_CREACION")
+                    .HasColumnType("datetime")
+                    .IsRequired()
+                    .IsUnicode(false);
+
+                entity.Property(p => p.FInhabilitacion)
+                    .HasColumnName("F_INHABILITACION")
+                    .HasColumnType("datetime")
+                    .IsUnicode(false);
+
+                entity.Property(p => p.Gcrowver)
+                    .HasColumnName("GCROWVER")
+                    .HasColumnType("datetime")
+                    .IsRequired()
+                    .IsUnicode(false);
+
+                entity.Property(p => p.IcoRes)
+                    .HasColumnName("ICO_RES")
+                    .HasMaxLength(30)
+                    .IsRequired()
+                    .IsUnicode(false);
+
+                entity.Property(p => p.Id)
+                    .HasColumnName("ID")
+                    .IsRequired()
+                    .IsUnicode(false);
+
+                entity.Property(p => p.IdEmpresa)
+                    .HasColumnName("ID_EMPRESA")
+                    .HasMaxLength(5)
+                    .IsUnicode(false);
+
+                entity.Property(p => p.IdNivel)
+                   .HasColumnName("ID_NIVEL")
+                   .HasMaxLength(5)
+                   .IsRequired()
+                   .IsUnicode(false);
+
+                entity.Property(p => p.IdNivelHijo)
+                   .HasColumnName("ID_NIVEL_HIJO")
+                   .HasMaxLength(5)
+                   .IsUnicode(false);
+
+                entity.Property(p => p.IdNivelPadre)
+                   .HasColumnName("ID_NIVEL_PADRE")
+                   .HasMaxLength(5)
+                   .IsUnicode(false);
+
+                entity.Property(p => p.IdOrganig)
+                   .HasColumnName("ID_ORGANIG")
+                   .IsRequired()
+                   .HasMaxLength(5)
+                   .IsUnicode(false);
+
+                entity.Property(p => p.IdPuesto)
+                   .HasColumnName("ID_PUESTO")
+                   .HasMaxLength(5)
+                   .IsUnicode(false);
+
+                entity.Property(p => p.IdentNivel)
+                   .HasColumnName("IDENT_NIVEL")
+                   .HasMaxLength(12)
+                   .IsUnicode(false);
+
+                entity.Property(p => p.N1)
+                   .HasColumnName("N1")
+                   .HasMaxLength(5)
+                   .IsUnicode(false);
+
+                entity.Property(p => p.N10)
+                  .HasColumnName("N10")
+                  .HasMaxLength(5)
+                  .IsUnicode(false);
+
+                entity.Property(p => p.N2)
+                  .HasColumnName("N2")
+                  .HasMaxLength(5)
+                  .IsUnicode(false);
+
+                entity.Property(p => p.N3)
+                  .HasColumnName("N3")
+                  .HasMaxLength(5)
+                  .IsUnicode(false);
+
+                entity.Property(p => p.N4)
+                  .HasColumnName("N4")
+                  .HasMaxLength(5)
+                  .IsUnicode(false);
+
+                entity.Property(p => p.N5)
+                  .HasColumnName("N5")
+                  .HasMaxLength(5)
+                  .IsUnicode(false);
+
+                entity.Property(p => p.N6)
+                  .HasColumnName("N6")
+                  .HasMaxLength(5)
+                  .IsUnicode(false);
+
+                entity.Property(p => p.N7)
+                  .HasColumnName("N7")
+                  .HasMaxLength(5)
+                  .IsUnicode(false);
+
+                entity.Property(p => p.N8)
+                  .HasColumnName("N8")
+                  .HasMaxLength(5)
+                  .IsUnicode(false);
+
+                entity.Property(p => p.N9)
+                  .HasColumnName("N9")
+                  .HasMaxLength(5)
+                  .IsUnicode(false);
+
+                entity.Property(p => p.Nivel)
+                .HasColumnName("NIVEL")
+                .IsUnicode(false);
+
+                entity.Property(p => p.OrganigId)
+                .HasColumnName("ORGANIG_ID")
+                .IsRequired()
+                .IsUnicode(false);
+
+                entity.Property(p => p.TResponsable)
+                .HasColumnName("T_RESPONSABLE")
+                .HasMaxLength(1)
+                .IsUnicode(false);
+
+
+
+
+            });
+
             OnModelCreatingPartial(modelBuilder);
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
-        public DbSet<Team2.Models.NivOrg> NivOrg { get; set; }
+       
     }
 }
