@@ -10,8 +10,8 @@ namespace Team2.DTO
         //Clase para calcular de cada grupo profesional cuantos trabajadores tenemos para después mostrarlo en las tablas del front.
 
         //ATributos
-
+        public string CAMINO { get; set; }
+        public string NOMBRE { get; set; }
         //TODO
-
     }
 }
