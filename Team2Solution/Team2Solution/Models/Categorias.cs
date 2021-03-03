@@ -20,7 +20,7 @@ namespace Team2.Models
         public int ID { get; set; }
         public DateTime GCROWVER { get; set; }
         public string OBSERVAC { get; set; }
-
+  
         public ICollection<Trabajadores> Trabajadores { get; set; }
         public ICollection<Clase_Persona> Clase_Personas { get; set; }
 

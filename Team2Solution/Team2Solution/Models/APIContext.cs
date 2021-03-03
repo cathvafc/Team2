@@ -84,21 +84,10 @@ namespace Team2.Models
                         .HasMaxLength(60)
                         .IsUnicode(false);
 
-                entity.HasOne(d => d.ID_CLASE_PER)
-                  .WithMany(p => p.Categors)
-                  .HasForeignKey(d => d.IdClasePer)
-                  .OnDelete(DeleteBehavior.ClientSetNull)
-                  .HasConstraintName("FK_CATEGORS_CLASE_PER");
-
-                entity.HasOne(d => d.ID_ESCALA)
-                    .WithMany(p => p.Categors)
-                    .HasForeignKey(d => d.IdEscala)
-                    .HasConstraintName("FK_CATEGORS_ESCALA");
-
-                entity.HasOne(d => d.ID_SUBESCALA)
-                    .WithMany(p => p.Categors)
-                    .HasForeignKey(d => d.IdSubescala)
-                    .HasConstraintName("FK_CATEGORS_SUBESCALA");
+                entity.HasMany(d => d.Clase_Personas)
+                  .WithOne(p => p.categorias)
+                  .HasForeignKey(d => d.ID_CLASE_PER);
+                        
 
             });
 
@@ -110,8 +99,7 @@ namespace Team2.Models
                         .HasColumnName("ID_CLASE_PER")
                         .IsRequired()
                         .HasMaxLength(1)
-                        .IsUnicode(false)
-                        .ValueGeneratedOnAdd(); //TODO: MIQUEL AutoincrementaL? MAGL
+                        .IsUnicode(false);
                 entity.Property(p => p.D_CLASE_PER)
                         .HasColumnName("D_CLASE_PER")
                         .IsRequired()
@@ -130,6 +118,7 @@ namespace Team2.Models
                         .HasColumnName("ASIMILADO")
                         .HasMaxLength(1)
                         .IsUnicode(false);
+
             });
 
             modelBuilder.Entity<Cuerpo>().HasKey(p => p.CUERPO);
@@ -153,8 +142,7 @@ namespace Team2.Models
                 entity.Property(p => p.ID)
                         .HasColumnName("ID")
                         .IsRequired()
-                        .IsUnicode(false)
-                        .ValueGeneratedOnAdd(); //TODO: MIQUEL AutoincrementaL? MAGL
+                        .IsUnicode(false);                
                 entity.Property(p => p.GCROWVER)
                         .HasColumnName("GCROWVER")
                         .HasColumnType("datetime")
@@ -383,11 +371,11 @@ namespace Team2.Models
                         .HasColumnName("ID_POBLACION_NAC")
                         .HasMaxLength(3)
                         .IsUnicode(false);
-                entity.Property(p => p.ID_PROBINCIA)
+                entity.Property(p => p.ID_PROVINCIA)
                         .HasColumnName("ID_PROBINCIA")
                         .HasMaxLength(2)
                         .IsUnicode(false);
-                entity.Property(p => p.ID_PROBINCIA_NAC)
+                entity.Property(p => p.ID_PROVINCIA_NAC)
                         .HasColumnName("ID_PROBINCIA_NAC")
                         .HasMaxLength(2)
                         .IsUnicode(false);
@@ -489,35 +477,20 @@ namespace Team2.Models
 
                 entity.HasOne(d => d.empresa)
                         .WithMany(p => p.Trabajadores)
-                        .HasForeignKey(d => d.ID_EMPRESSA)
-                        .OnDelete(DeleteBehavior.ClientSetNull);
-                        //.HasConstraintName("FK_TRABAJADORES_EMPRESA");
+                        .HasForeignKey(d => d.ID_EMPRESSA);
+                        
+                entity.HasOne(d => d.Cuerpo)
+                    .WithMany(p => p.trabajadores)
+                    .HasForeignKey(d => d.CUERPO);
 
-                entity.HasOne(d => d.CUERPO)
+                entity.HasOne(d => d.categorias)
                     .WithMany(p => p.Trabajadores)
-                    .HasForeignKey(d => d.Cuerpo)
-                    .HasConstraintName("FK_TRABAJADORES_CUERPOS");
+                    .HasForeignKey(d => d.ID_CATEGORIA);
 
-                entity.HasOne(d => d.GRUPO)
-                    .WithMany(p => p.Trabajadores)
-                    .HasForeignKey(d => d.Grupo)
-                    .HasConstraintName("FK_TRABAJADORES_GRUPOS");
-
-                entity.HasOne(d => d.ID_CATEGORIA)
-                    .WithMany(p => p.Trabajadores)
-                    .HasForeignKey(d => d.IdCategoria)
-                    .HasConstraintName("FK_TRABAJADORES_CATEGORS");
-
-                entity.HasOne(d => d.ID_PROVINCIA_NAC)
-                    .WithMany(p => p.Trabajadores)
-                    .HasForeignKey(d => d.IdProvincia)
-                    .HasConstraintName("FK_TRABAJADORES_PROVINCIAS");
-              
-                entity.HasOne(d => d.T_PROVIS)
-                    .WithMany(p => p.Trabajadores)
-                    .HasForeignKey(d => d.TProvis)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_TRABAJADORES_T_PROVIS");
+                entity.HasOne(d => d.t_Provincia)
+                    .WithMany(p => p.trabajadores)
+                    .HasForeignKey(d => d.T_PROVIS);
+                   
 
             });
 
