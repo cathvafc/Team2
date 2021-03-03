@@ -33,8 +33,8 @@ namespace Team2.Models
         public char ID_PAIS_NAC { get; set; }
         public char ID_POBLACION { get; set; }
         public char ID_POBLACION_NAC { get; set; }
-        public char ID_PROBINCIA { get; set; }
-        public char ID_PROBINCIA_NAC { get; set; }
+        public char ID_PROVINCIA { get; set; }
+        public char ID_PROVINCIA_NAC { get; set; }
         public char ID_PUESTO { get; set; }
         public char ID_T_SIT_ADMV { get; set; }
         public char ID_TRABAJADOR { get; set; }
