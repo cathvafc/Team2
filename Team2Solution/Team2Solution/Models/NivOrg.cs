@@ -13,6 +13,7 @@ namespace Team2.Models
 
             trabajadores = new HashSet<Trabajadores>();
         }
+
         public string Camino { get; set; }
         public string CategNivel { get; set; }
         public string DNivel { get; set; }
