@@ -48,9 +48,9 @@ TODO
 
 ## Build with 🛠️
 
-* TODO Insert Tools *
-
-* [.NET Core 3.1](https://docs.microsoft.com/es-es/dotnet/core/whats-new/dotnet-core-3-1) - *El framework web usado*
+* [.NET Core 3.1](https://docs.microsoft.com/es-es/dotnet/core/whats-new/dotnet-core-3-1)
+* [JQuery](https://jquery.com/)
+* [Bootstrap](https://getbootstrap.com/)
 
 ## Autores ✒️
 
