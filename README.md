@@ -1,6 +1,6 @@
 # Team2 
 
-* Repositorio del proyecto final para Grupo Castilla del curso de C#.NET de la Fundación Esplai *
+* Repositorio del proyecto final para Grupo Castilla del curso de C#.NET de la Fundación Esplai 
 
 ## Comenzando 🚀
 
