@@ -27,12 +27,12 @@ namespace Team2.Controllers
 
             {
                 CAMINO = t.NivelOrganizativo.Camino,
-                ID_TRABAJADOR = t.ID_TRABAJADOR.ToString(),
+                ID_TRABAJADOR = t.ID_TRABAJADOR,
                 EMPRESA = t.empresa.D_EMPRESA,
                 NOMBRE = t.NOMBRE + " " + t.APELLIDO1 + " " + t.APELLIDO2,
-                TP = t.t_Provincia.ID_CLASE_PER.ToString(),
+                TP = t.t_Provincia.ID_CLASE_PER,
                 TIPO_EMPRESA = t.t_Provincia.DESCRIP,
-                GRUPO = t.GRUPO.ToString(),
+                GRUPO = t.GRUPO,
                 CUERPO = t.Cuerpo.DESCRIP,
                 CATEGORIA = t.categorias.DESCRIP
 
@@ -52,7 +52,7 @@ namespace Team2.Controllers
         }
 
 
-        private bool TrabajadoresExists(char id)
+        private bool TrabajadoresExists(string id)
         {
             return _context.Trabajadores.Any(e => e.ID_EMPRESSA == id);
         }

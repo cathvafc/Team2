@@ -13,13 +13,13 @@ namespace Team2.Models
             Clase_Personas = new HashSet<Clase_Persona>();
         }
 
-        public char CATEGORI { get; set; }
+        public string CATEGORI { get; set; }
         public string DESCRIP { get; set; }
-        public char CUERPO { get; set; }
-        public char ID_CLASE_PER { get; set; }
-        public char ID_SUBESCALA { get; set; }
-        public char ID_CLASE { get; set; }
-        public char ID_ESCALA { get; set; }
+        public string CUERPO { get; set; }
+        public string ID_CLASE_PER { get; set; }
+        public string ID_SUBESCALA { get; set; }
+        public string ID_CLASE { get; set; }
+        public string ID_ESCALA { get; set; }
         public DateTime F_INI_VIGEN { get; set; }
         public DateTime F_FIN_VIGEN { get; set; }
         public string D_FUNCIONES { get; set; }

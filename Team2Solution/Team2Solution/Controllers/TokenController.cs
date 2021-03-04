@@ -31,6 +31,7 @@ namespace Team2.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(User _userData)
         {
+            
 
             if (_userData != null && _userData.Email != null && _userData.Password != null)
             {

@@ -26,7 +26,7 @@ namespace Team2.Models
             modelBuilder.Entity<Categorias>().HasKey(p => p.CATEGORI);
             modelBuilder.Entity<Categorias>(entity =>
             {
-                entity.ToTable("Categors");
+                entity.ToTable("CATEGORS");
                 entity.Property(p => p.CATEGORI)
                         .HasColumnName("CATEGORI")
                         .IsRequired()
@@ -341,7 +341,7 @@ namespace Team2.Models
                         .HasMaxLength(5)
                         .IsUnicode(false);
                 entity.Property(p => p.ID_EMPRESSA)
-                        .HasColumnName("ID_EMPRESSA")
+                        .HasColumnName("ID_EMPRESA")
                         .IsRequired()
                         .HasMaxLength(5)
                         .IsUnicode(false);
@@ -503,6 +503,7 @@ namespace Team2.Models
             modelBuilder.Entity<User>().HasKey(p => new { p.UserId, p.UserName});
             modelBuilder.Entity<User>(entity =>
             {
+                entity.ToTable("UserInfo");
                 entity.Property(p => p.UserId)
                       .HasColumnName("UserId")
                       .IsRequired()
@@ -544,9 +545,10 @@ namespace Team2.Models
                       .IsUnicode(false);
             });
 
-            modelBuilder.Entity<NivOrg>().HasKey(p => new { p.IdOrganig, p.DNivel });
+            modelBuilder.Entity<NivOrg>().HasKey(p => new { p.IdOrganig});
             modelBuilder.Entity<NivOrg>(entity =>
             {
+                entity.ToTable("NIV_ORG");
                 entity.Property(p => p.Camino)
                       .HasColumnName("CAMINO")
                       .HasMaxLength(240)

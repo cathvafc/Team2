@@ -16,7 +16,7 @@ namespace Team2Solution.Controllers
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class NivOrgsController : ControllerBase
+    public class DepartamentoController : ControllerBase
     {
         private readonly APIContext _context;
 
@@ -29,7 +29,7 @@ namespace Team2Solution.Controllers
            NOMBRE = d.DNivel
        };
 
-        public NivOrgsController(APIContext context)
+        public DepartamentoController(APIContext context)
         {
             _context = context;
         }
@@ -40,8 +40,8 @@ namespace Team2Solution.Controllers
         public  string GetDepartamento()
         {
             var lista = _context.NivOrg.Select(AsTablaDepartamentoDto);
-            List<DepartamentoDto> lista2 = null;
-            foreach (var item in lista)
+            List<DepartamentoDto> lista2 = new List<DepartamentoDto>();
+            foreach (DepartamentoDto item in lista)
             {
                 if (item.CAMINO.Length < 12)
                 {
@@ -53,11 +53,6 @@ namespace Team2Solution.Controllers
 
             return output;
 
-        }
-
-        private bool NivOrgExists(int id)
-        {
-            return _context.NivOrg.Any(e => e.Id == id);
         }
     }
 }

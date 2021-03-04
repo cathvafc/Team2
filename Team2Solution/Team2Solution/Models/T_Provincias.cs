@@ -12,9 +12,9 @@ namespace Team2.Models
             trabajadores = new HashSet<Trabajadores>();
         }
 
-        public char T_PROVIS { get; set; }
+        public string T_PROVIS { get; set; }
         public string DESCRIP { get; set; }
-        public char ID_CLASE_PER { get; set; }
+        public string ID_CLASE_PER { get; set; }
         public int ID { get; set; }
         public DateTime GCROWVER { get; set; }
 

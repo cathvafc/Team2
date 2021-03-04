@@ -13,9 +13,9 @@ namespace Team2.Models
             Trabajadores = new HashSet<Trabajadores>();
         }
 
-        public char ID_EMPRESA { get; set; }
+        public string ID_EMPRESA { get; set; }
         public string D_EMPRESA  { get; set; }
-        public char SIGLAS  { get; set; }
+        public string SIGLAS  { get; set; }
         public string DOMICILIO  { get; set; }
         public string NUM { get; set; }
         public string KM { get; set; }
@@ -23,8 +23,8 @@ namespace Team2.Models
         public string PISO { get; set; }
         public string PUERTA { get; set; }
         public string CPOSTAL { get; set; }
-        public char ID_PROVINCIA { get; set; }
-        public char ID_POBLACION { get; set; }
+        public string ID_PROVINCIA { get; set; }
+        public string ID_POBLACION { get; set; }
         public string TELEFONO1 { get; set; }
         public string TELEFONO2 { get; set; }
         public string NIF { get; set; }
