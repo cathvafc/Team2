@@ -87,8 +87,8 @@ namespace Team2.Models
                         .HasMaxLength(60)
                         .IsUnicode(false);
 
-                entity.HasMany(d => d.Clase_Personas)
-                  .WithOne(p => p.categorias)
+                entity.HasOne(d => d.Clase_Personas)
+                  .WithMany(p => p.categorias)
                   .HasForeignKey(d => d.ID_CLASE_PER);
                         
 
@@ -496,7 +496,7 @@ namespace Team2.Models
 
                 entity.HasOne(d => d.NivelOrganizativo)
                     .WithMany(p => p.trabajadores)
-                    .HasForeignKey(d => d.ID_ORGANIG);
+                    .HasForeignKey(d => d.ID_NIVEL);
 
             });
 
@@ -545,10 +545,11 @@ namespace Team2.Models
                       .IsUnicode(false);
             });
 
-            modelBuilder.Entity<NivOrg>().HasKey(p => new { p.IdOrganig});
+            modelBuilder.Entity<NivOrg>().HasKey(p => new { p.IdNivel});
             modelBuilder.Entity<NivOrg>(entity =>
             {
                 entity.ToTable("NIV_ORG");
+
                 entity.Property(p => p.Camino)
                       .HasColumnName("CAMINO")
                       .HasMaxLength(240)

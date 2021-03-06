@@ -73,6 +73,7 @@ namespace Team2.Controllers
         private async Task<User> GetUser(string email, string password)
         {
             return await _context.User.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
+
         }
     }
 

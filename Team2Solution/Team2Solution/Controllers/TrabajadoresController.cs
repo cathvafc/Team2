@@ -9,6 +9,9 @@ using Team2.Models;
 using Team2.DTO;
 using Microsoft.AspNetCore.Authorization;
 using System.Linq.Expressions;
+using Newtonsoft.Json;
+
+
 
 namespace Team2.Controllers
 {
@@ -46,9 +49,21 @@ namespace Team2.Controllers
 
         // GET: api/Trabajadores
         [HttpGet]
-        public  IQueryable<TrabajadoresDto> GetTablaTrabajadores()
+        public string GetTablaTrabajadores()
         {
-            return  _context.Trabajadores.Select(AsTablaTrabajadoresDto);
+            var lista = _context.Trabajadores.Select(AsTablaTrabajadoresDto);
+            List<TrabajadoresDto> lista2 = new List<TrabajadoresDto>();
+            foreach (TrabajadoresDto item in lista)
+            {
+               
+                    lista2.Add(item);
+                
+            }
+
+            var output = JsonConvert.SerializeObject(lista2, Formatting.Indented);
+
+            return output;
+
         }
 
 

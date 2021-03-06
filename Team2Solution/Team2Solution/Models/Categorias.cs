@@ -10,7 +10,7 @@ namespace Team2.Models
         public Categorias()
         {
             Trabajadores = new HashSet<Trabajadores>();
-            Clase_Personas = new HashSet<Clase_Persona>();
+            
         }
 
         public string CATEGORI { get; set; }
@@ -28,7 +28,7 @@ namespace Team2.Models
         public string OBSERVAC { get; set; }
   
         public ICollection<Trabajadores> Trabajadores { get; set; }
-        public ICollection<Clase_Persona> Clase_Personas { get; set; }
+        public Clase_Persona Clase_Personas { get; set; }
 
 
     }
