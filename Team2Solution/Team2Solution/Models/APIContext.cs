@@ -12,6 +12,8 @@ namespace Team2.Models
         {
 
         }
+
+        //Generamos los sets de datos que obtendremos de las tablas de la BBDD
         public virtual DbSet<Categorias> Categors { get; set; }
         public virtual DbSet<Clase_Persona> Proveedores { get; set; }
         public virtual DbSet<Cuerpo> Suministros { get; set; }
@@ -23,6 +25,7 @@ namespace Team2.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Generamos el modelo de la tabla categorias
             modelBuilder.Entity<Categorias>().HasKey(p => p.CATEGORI);
             modelBuilder.Entity<Categorias>(entity =>
             {
@@ -93,7 +96,7 @@ namespace Team2.Models
                         
 
             });
-
+            //Generamos el modelo de la tabla Clase_Persona
             modelBuilder.Entity<Clase_Persona>().HasKey(p => p.ID_CLASE_PER);
             modelBuilder.Entity<Clase_Persona>(entity =>
             {
@@ -123,7 +126,7 @@ namespace Team2.Models
                         .IsUnicode(false);
 
             });
-
+            //Generamos el modelo de la tabla Cuerpo
             modelBuilder.Entity<Cuerpo>().HasKey(p => p.CUERPO);
             modelBuilder.Entity<Cuerpo>(entity =>
             {
@@ -152,7 +155,7 @@ namespace Team2.Models
                         .IsRequired()
                         .IsUnicode(false);
             });
-
+            //Generamos el modelo de la tabla Empresa
             modelBuilder.Entity<Empresa>().HasKey(p => p.ID_EMPRESA);
             modelBuilder.Entity<Empresa>(entity =>
             {
@@ -235,7 +238,7 @@ namespace Team2.Models
 
 
             });
-
+            //Generamos el modelo de la tabla T_Provincias
             modelBuilder.Entity<T_Provincias>().HasKey(p => p.T_PROVIS);
             modelBuilder.Entity<T_Provincias>(entity =>
             {
@@ -265,7 +268,7 @@ namespace Team2.Models
                         .HasColumnType("datetime");
             });
 
-            //multiples Primary Keys([ID_EMPRESA] , [ID_TRABAJADOR], [ID_ORGANIG], [ID_NIVEL]   )
+            //Generamos el modelo de la tabla Trabajadores
             modelBuilder.Entity<Trabajadores>().HasKey(p => new { p.ID_EMPRESSA, p.ID_TRABAJADOR, p.ID_ORGANIG, p.ID_NIVEL });
             modelBuilder.Entity<Trabajadores>(entity =>
             {
@@ -499,7 +502,7 @@ namespace Team2.Models
                     .HasForeignKey(d => d.ID_NIVEL);
 
             });
-
+            //Generamos el modelo de la tabla User
             modelBuilder.Entity<User>().HasKey(p => new { p.UserId, p.UserName});
             modelBuilder.Entity<User>(entity =>
             {
@@ -544,7 +547,7 @@ namespace Team2.Models
                       .HasColumnType("datetime")
                       .IsUnicode(false);
             });
-
+            //Generamos el modelo de la tabla NivOrg
             modelBuilder.Entity<NivOrg>().HasKey(p => new { p.IdNivel});
             modelBuilder.Entity<NivOrg>(entity =>
             {

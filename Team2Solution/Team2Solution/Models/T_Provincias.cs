@@ -12,6 +12,7 @@ namespace Team2.Models
             trabajadores = new HashSet<Trabajadores>();
         }
 
+        //Atributos del modelo T_provincias
         public string T_PROVIS { get; set; }
         public string DESCRIP { get; set; }
         public string ID_CLASE_PER { get; set; }

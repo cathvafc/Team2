@@ -7,11 +7,9 @@ namespace Team2.DTO
 {
     public class DepartamentoDto
     {
-        //Clase para calcular de cada grupo profesional cuantos trabajadores tenemos para después mostrarlo en las tablas del front.
-
-        //ATributos
+        //Atributos del departamento
         public string CAMINO { get; set; }
         public string NOMBRE { get; set; }
-        //TODO
+       
     }
 }

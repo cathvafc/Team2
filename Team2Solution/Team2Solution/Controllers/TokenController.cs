@@ -28,15 +28,20 @@ namespace Team2.Controllers
             _context = context;
         }
 
+
+        //POST: api/Token
+        //Se recibe una petición POST con el usuario y si existe en el sistema, se genera el token para ese usuario
         [HttpPost]
         public async Task<IActionResult> Post(User _userData)
         {
             
-
+            //Se comprueba que la variable pasada por parámetro tenga datos.
             if (_userData != null && _userData.Email != null && _userData.Password != null)
             {
+                //Se obtiene el user de la base de datos con el email y el password.
                 var user = await GetUser(_userData.Email, _userData.Password);
 
+                //Si se ha encontrado en la base de datos el usuario se claimea
                 if (user != null)
                 {
                     //create claims details based on the user information
@@ -51,25 +56,32 @@ namespace Team2.Controllers
                     new Claim("Email", user.Email)
                    };
 
+                    //Se genera la clave 
                     var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
 
+                    //Se aplica el algoritmo de seguridad HASH256
                     var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
+                    //Con la clave generada previamente se obtiene el Token
                     var token = new JwtSecurityToken(_configuration["Jwt:Issuer"], _configuration["Jwt:Audience"], claims, expires: DateTime.UtcNow.AddDays(1), signingCredentials: signIn);
 
+                    //Return 200 con todo correcto y el token público
                     return Ok(new JwtSecurityTokenHandler().WriteToken(token));
                 }
                 else
                 {
+                    //Return 400 si algo ha fallado
                     return BadRequest("Invalid credentials");
                 }
             }
             else
             {
+                //Return 400 si algo ha fallado
                 return BadRequest();
             }
         }
 
+        //Función que obtiene el user de la base de datos con el email y el password.
         private async Task<User> GetUser(string email, string password)
         {
             return await _context.User.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);

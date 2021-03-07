@@ -23,8 +23,8 @@ namespace Team2.Controllers
     {
         private readonly APIContext _context;
 
-        //DTOs
 
+        //Función para generar la tabla de trabajadores con los parámetros especificados
         private static readonly Expression<Func<Trabajadores, TrabajadoresDto>> AsTablaTrabajadoresDto =
             
             t => new TrabajadoresDto
@@ -49,11 +49,14 @@ namespace Team2.Controllers
         }
 
         // GET: api/Trabajadores
+        // Devuelve la lista de trabajadores para mostrar en el front en formato json
         [HttpGet]
         public string GetTablaTrabajadores()
         {
             var lista = _context.Trabajadores.Select(AsTablaTrabajadoresDto);
             List<TrabajadoresDto> lista2 = new List<TrabajadoresDto>();
+
+            
             foreach (TrabajadoresDto item in lista)
             {
                

@@ -7,6 +7,7 @@ namespace Team2.Models
 {
     public class Trabajadores
     {
+        //Atributos del modelo Trabajadores
         public string APELLIDO1 { get; set; }
         public string APELLIDO2 { get; set; }
         public int CPOSTAL { get; set; }

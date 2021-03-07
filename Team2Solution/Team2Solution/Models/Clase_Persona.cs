@@ -12,6 +12,8 @@ namespace Team2.Models
             categorias = new HashSet<Categorias>();
 
         }
+
+        //Atributos del modelo Clase_Persona
         public string ID_CLASE_PER { get; set; }
         public string D_CLASE_PER { get; set; }
         public int ID { get; set; }

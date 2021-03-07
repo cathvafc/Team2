@@ -12,7 +12,7 @@ namespace Team2.Models
             Trabajadores = new HashSet<Trabajadores>();
             
         }
-
+        //Atributos del modelo categorias
         public string CATEGORI { get; set; }
         public string DESCRIP { get; set; }
         public string CUERPO { get; set; }

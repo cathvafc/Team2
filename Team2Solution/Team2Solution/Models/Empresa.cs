@@ -13,6 +13,7 @@ namespace Team2.Models
             Trabajadores = new HashSet<Trabajadores>();
         }
 
+        //Atributos del modelo Empresa
         public string ID_EMPRESA { get; set; }
         public string D_EMPRESA  { get; set; }
         public string SIGLAS  { get; set; }

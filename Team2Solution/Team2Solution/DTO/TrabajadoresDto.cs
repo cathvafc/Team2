@@ -7,10 +7,7 @@ namespace Team2.DTO
 {
     public class TrabajadoresDto
     {
-        //Clase para calcular de cada tipo de empleado cuantos trabajadores tenemos para después mostrarlo en las tablas del front.
-
-        //ATributos
-
+        //Atributos del trabajador
         public string CAMINO { get; set; }
         public string ID_TRABAJADOR { get; set; }
         public string EMPRESA { get; set; }
@@ -21,6 +18,5 @@ namespace Team2.DTO
         public string CUERPO { get; set; }
         public string CATEGORIA { get; set; }
 
-        //TODO
     }
 }
