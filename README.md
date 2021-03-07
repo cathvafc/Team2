@@ -2,14 +2,13 @@
 
 * Repositorio del proyecto final para Grupo Castilla del curso de C#.NET de la Fundación Esplai 
 
-## Comenzando 🚀
+## Repositorio Back-End 🚀
 
-* TODO Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas. *
+* [Back-end](https://github.com/cathvafc/Team2BackEnd)
 
-TODO
+## Repositorio Front-End 🚀
 
-Mira **Deployment** para conocer como desplegar el proyecto.
-
+* [Front-end](https://github.com/cathvafc/Team2FrontEnd)
 
 ### Pre-requisitos 📋
 
