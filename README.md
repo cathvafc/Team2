@@ -32,18 +32,6 @@ System.IdentityModel.Tokens.Jwt -Version 5.6.0
 Microsoft.AspNetCore.Authentication.JwtBearer -Version 3.1.8
 ```
 
-### Instalación 🔧
-
-* TODO Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose *
-
-```
-TODO
-```
-
-## Deploy 📦
-
-* HOW TO DEPLOY TODO *
-
 ## Build with 🛠️
 
 * [.NET Core 3.1](https://docs.microsoft.com/es-es/dotnet/core/whats-new/dotnet-core-3-1)
@@ -57,10 +45,6 @@ TODO
 * **Miguel Ángel** - *Full-stack* - [cathvafc](https://github.com/cathvafc)
 
 También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
-
-## Licencia 📄
-
-*TODO debatir sobre licencia * ¿License.md?
 
 ## Expresiones de Gratitud 🎁
 
